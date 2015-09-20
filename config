@@ -61,19 +61,19 @@
         }
     },
     "accounts": {
-        "charlie": {
-            "name": "Charlie Root",
-            "email": "root@localhost",
-            "gpgkey": "",
-            "sendmail": "msmtp -t",
+        "hugo": {
+            "name": "Hugo Roy",
+            "email": "hugo@hugoroy.eu",
+            "gpgkey": "0x8D022C99B3D7B795",
+            "sendmail": "msmtp -a ampoliros",
             "default": "true",
-            "save_sent": "false",
-            "save_sent_to": "\/home\/root\/Mail\/sent\/cur\/"
+            "save_sent": "true",
+            "save_sent_to": "\/home\/hugo\/Mail\/ampoliros\/Envoyes\/cur\/"
         }
     },
     "startup": {
         "queries": {
-            "inbox": "tag:inbox"
+            "inbox": "tag:inbox AND (tag:ampoliros OR tag:perso NOT tag:tosdr NOT tag:fsfe)"
         }
     }
 }
