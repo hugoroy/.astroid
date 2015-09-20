@@ -5,7 +5,7 @@
         },
         "notmuch": {
             "db": "~\/Mail",
-            "excluded_tags": "muted,spam,deleted"
+            "excluded_tags": "muted,spam,deleted,ignore,junk"
         },
         "debug": {
             "dryrun_sending": "false"
