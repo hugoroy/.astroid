@@ -23,9 +23,9 @@
         }
     },
     "editor": {
-        "gvim": {
-            "cmd": "gvim",
-            "args": "-f -c 'set ft=mail' '+set fileencoding=utf-8' '+set ff=unix' '+set enc=utf-8'"
+        "emacsclient": {
+            "cmd": "emacsclient",
+            "args": "-t"
         },
         "charset": "utf-8"
     },
