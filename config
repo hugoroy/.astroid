@@ -29,8 +29,8 @@
         },
         "charset": "utf-8",
         "emacsclient": {
-            "cmd": "emacsclient",
-            "args": "-t"
+            "cmd": "emacs",
+            "args": ""
         }
     },
     "mail": {
@@ -77,7 +77,11 @@
     },
     "startup": {
         "queries": {
-            "inbox": "tag:inbox AND (tag:ampoliros OR tag:perso NOT tag:tosdr NOT tag:fsfe)"
+            "Inbox": "tag:inbox AND (tag:ampoliros OR tag:perso NOT tag:tosdr NOT tag:fsfe)",
+            "ToSDR": "tag:inbox AND tag:tosdr",
+            "FSFE": "tag:inbox AND tag:fsfe",
+            "Inboxes": "tag:inbox",
+            "⌚ Waiting": "tag:waiting"
         }
     }
 }
