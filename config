@@ -1,7 +1,7 @@
 {
     "astroid": {
         "config": {
-            "version": "0"
+            "version": "1"
         },
         "notmuch": {
             "db": "~\/Mail",
@@ -12,8 +12,19 @@
         }
     },
     "thread_index": {
-        "open_default_paned": "false",
-        "page_jump_rows": "6"
+        "page_jump_rows": "6",
+        "cell": {
+            "font_description": "default",
+            "line_spacing": "2",
+            "date_length": "10",
+            "message_count_length": "4",
+            "authors_length": "20",
+            "tags_length": "80",
+            "subject_color": "#807d74",
+            "subject_color_selected": "#000000",
+            "tags_color": "#31587a"
+        },
+        "open_default_paned": "false"
     },
     "general": {
         "time": {
@@ -35,10 +46,10 @@
     },
     "mail": {
         "reply": {
-            "quote_line": "Excerpts from %1's message of %2:"
+            "quote_line": "↪ %2, %1:"
         },
         "forward": {
-            "quote_line": "Forwarding %1's message of %2:"
+            "quote_line": "[↪ %2, %1]"
         }
     },
     "poll": {
@@ -64,6 +75,11 @@
             "enable_for_patches": "true"
         }
     },
+    "crypto": {
+        "gpg": {
+            "path": "gpg"
+        }
+    },
     "accounts": {
         "hugo": {
             "name": "Hugo Roy",
@@ -72,16 +88,20 @@
             "sendmail": "msmtp -a ampoliros",
             "default": "true",
             "save_sent": "true",
-            "save_sent_to": "\/home\/hugo\/Mail\/ampoliros\/Envoyes\/cur\/"
+            "save_sent_to": "\/home\/hugo\/Mail\/ampoliros\/Envoyes\/cur\/",
+            "save_drafts_to": "\/home\/hugo\/Mail\/ampoliros\/Drafts\/cur\/"
         }
     },
     "startup": {
         "queries": {
-            "Inbox": "tag:inbox AND (tag:ampoliros OR tag:perso NOT tag:tosdr NOT tag:fsfe)",
-            "ToSDR": "tag:inbox AND tag:tosdr",
-            "FSFE": "tag:inbox AND tag:fsfe",
-            "Inboxes": "tag:inbox",
-            "⌚ Waiting": "tag:waiting"
+            "Inbox": "tag:inbox AND (tag:ampoliros OR tag:perso NOT tag:tosdr NOT tag:fsfe NOT tag:draft)",
+            "ToSDR": "tag:inbox AND tag:tosdr NOT tag:draft",
+            "FSFE": "tag:inbox AND tag:fsfe NOT tag:draft",
+            "avocat": "tag:inbox AND tag:avocat NOT tag:draft",
+            "B&McK": "tag:inbox AND tag:baker NOT tag:draft",
+            "⌚ Waiting": "tag:waiting",
+            "↻ Sent": "tag:from-me",
+            "Archives": "tag:archive"
         }
     }
 }
