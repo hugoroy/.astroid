@@ -1,0 +1,4 @@
+main_window.close_page=C-w
+
+#thread_view.next_message=j
+#thread_view.previous_message=k
