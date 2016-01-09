@@ -5,7 +5,8 @@
         },
         "notmuch": {
             "db": "~\/Mail",
-            "excluded_tags": "muted,spam,deleted,ignore,junk"
+            "excluded_tags": "muted,spam,deleted,ignore,junk",
+            "sent_tags": "sent,inbox"
         },
         "debug": {
             "dryrun_sending": "false"
@@ -53,7 +54,7 @@
         }
     },
     "poll": {
-        "interval": "60"
+        "interval": "500"
     },
     "attachment": {
         "external_open_cmd": "xdg-open"
@@ -81,27 +82,22 @@
         }
     },
     "accounts": {
-        "hugo": {
-            "name": "Hugo Roy",
-            "email": "hugo@hugoroy.eu",
-            "gpgkey": "0x8D022C99B3D7B795",
-            "sendmail": "msmtp -a ampoliros",
+        "example": {
+            "name": "Jane Doe",
+            "email": "jane.doe@example.org",
+            "gpgkey": "0x0000000000000000",
+            "sendmail": "msmtp --read-envelope-from -t",
             "default": "true",
             "save_sent": "true",
-            "save_sent_to": "\/home\/hugo\/Mail\/ampoliros\/Envoyes\/cur\/",
-            "save_drafts_to": "\/home\/hugo\/Mail\/ampoliros\/Drafts\/cur\/"
+            "save_sent_to": "\/home\/jane\/Mail\/example\/Sent\/cur\/",
+            "save_drafts_to": "\/home\/jane\/Mail\/example\/Drafts\/cur\/"
         }
     },
     "startup": {
         "queries": {
-            "Inbox": "tag:inbox AND (tag:ampoliros OR tag:perso NOT tag:tosdr NOT tag:fsfe NOT tag:draft)",
-            "ToSDR": "tag:inbox AND tag:tosdr NOT tag:draft",
-            "FSFE": "tag:inbox AND tag:fsfe NOT tag:draft",
-            "avocat": "tag:inbox AND tag:avocat NOT tag:draft",
-            "B&McK": "tag:inbox AND tag:baker NOT tag:draft",
-            "⌚ Waiting": "tag:waiting",
-            "↻ Sent": "tag:from-me",
-            "Archives": "tag:archive"
+            "inbox": "tag:inbox",
+            "waiting": "tag:draft OR tag:waiting",
+            "month": "date:last_month..today NOT tag:inbox NOT tag:archives"
         }
     }
 }
