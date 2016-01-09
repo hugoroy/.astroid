@@ -1,4 +1,38 @@
-main_window.close_page=C-w
 
-#thread_view.next_message=j
-#thread_view.previous_message=k
+# General patterns
+
+## Close like most other apps
+main_window.close_page=C-w #default: x
+thread_index.close_pane=C-w #default: x
+
+
+# Main Window
+
+## New notmuch search query
+main_window.search=/ #default: F
+
+## Navigate kindof like vim
+main_window.next_page=l #default: b
+main_window.previous_page=h #default: B
+
+
+# Thread index
+
+## Apply action to marked threads like mutt
+thread_index.multi=; #default: +
+
+## Add or remove tags to thread
+thread_index.label=+ #default: l
+thread_index.label=- #default: l
+
+## Tag as spam
+thread_index.spam=X
+
+
+# Thread view
+
+## Navigate like mutt
+thread_view.next_message=j
+thread_view.previous_message=k
+thread_view.down=n
+thread_view.up=p
