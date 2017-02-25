@@ -1,38 +1,41 @@
 
-# General patterns
-
-## Close like most other apps
-main_window.close_page=C-w #default: x
-thread_index.close_pane=C-w #default: x
-
 
 # Main Window
 
 ## New notmuch search query
-main_window.search=/ #default: F
-
-## Navigate kindof like vim
-main_window.next_page=l #default: b
-main_window.previous_page=h #default: B
-
+main_window.search=/ 
 
 # Thread index
 
-## Apply action to marked threads like mutt
-thread_index.multi=; #default: +
-
 ## Add or remove tags to thread
-thread_index.label=+ #default: l
-thread_index.label=- #default: l
+#thread_index.label=+ 
+#thread_index.label=Minus
 
 ## Tag as spam
 thread_index.spam=X
 
+# Thread scripts
+
+## Toggle waiting tag
+thread_index.run(/home/hugo/.config/astroid/hooks/toggle waiting %1)=w
+
+## Archive without reading (but mark as read)
+thread_index.run(/home/hugo/.config/astroid/hooks/toggle "unread -inbox" %1)=A
+
+## Remember thread with org-mode capture
+#### TODO: http://git.upsilon.cc/?p=utils/org-mutt.git;a=blob_plain;f=remember-mail;hb=HEAD
 
 # Thread view
 
-## Navigate like mutt
+## Navigate in thread more like mutt
 thread_view.next_message=j
 thread_view.previous_message=k
 thread_view.down=n
 thread_view.up=p
+
+## Add or remove tags to message
+#thread_view.tag_message=+ 
+#thread_view.tag_message=Minus
+
+## Forward inline
+thread_view.forward_inline=M-f
