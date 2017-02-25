@@ -1,0 +1,9 @@
+
+; Write email in emacs with notmuch mode
+(autoload 'notmuch "notmuch" "notmuch mail" t)
+
+(require 'notmuch)
+
+; See the "message_id_fqdn" option in astroid/config to adjust the below:
+(add-to-list 'auto-mode-alist '("hugo@LOCAL.FQDN" . notmuch-message-mode))
+(add-hook 'notmuch-message-mode-hook 'turn-on-auto-fill)
