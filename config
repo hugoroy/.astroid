@@ -172,7 +172,7 @@
     },
     "startup": {
         "queries": {
-            "inbox": "tag:inbox"
+            "     📥     ": "tag:inbox"
         }
     }
 }

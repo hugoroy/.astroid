@@ -1,0 +1,8 @@
+{
+    "saved": {
+        "     ★     ": "tag:flagged",
+        "     ⌚     ": "tag:waiting OR tag:draft",
+        "     📅     ": "date:last_month..today NOT tag:inbox NOT tag:archives"
+    },
+    "history": ""
+}
