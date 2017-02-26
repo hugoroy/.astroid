@@ -34,8 +34,8 @@ notmuch tag +spam -inbox -- tag:new AND \(folder:Spam OR folder:ampoliros/Spam\)
 notmuch tag +junk -inbox -- tag:new AND \(folder:Junk\)
 notmuch tag -inbox -- tag:new AND tag:spam
 
-# ignore deleted messages
-notmuch tag +ignore -inbox -- tag:new AND \(folder:Trash OR folder:ampoliros/Trash\)
+# tag deleted messages accordingly
+notmuch tag +deleted -inbox -- tag:new AND \(folder:Trash OR folder:ampoliros/Trash\)
 
 
 # finally, untag all "new" messages
