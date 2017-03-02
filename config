@@ -1,7 +1,7 @@
 {
     "astroid": {
         "config": {
-            "version": "6"
+            "version": "7"
         },
         "notmuch_config": "\/home\/hugo\/.notmuch-config",
         "debug": {
@@ -54,11 +54,12 @@
         "external_editor": "true",
         "charset": "utf-8",
         "save_draft_on_force_quit": "true",
-        "attachment_words": "attach,pj,pièce jointe, pièce-jointe, pièces-jointes, pièce-jointe"
+        "attachment_words": "attach,pj,pièce jointe,pièce-jointe,pièces-jointes,ci-joint",
+	"attachment_directory": "~"
     },
     "mail": {
         "reply": {
-            "quote_line": "↪ %1 / %2:"
+            "quote_line": "↪ %1 \/ %2:"
         },
         "forward": {
             "quote_line": "✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉✉",
@@ -67,7 +68,8 @@
         "sent_tags": "sent,inbox,new",
         "message_id_fqdn": "LOCAL.FQDN",
         "message_id_user": "hugo",
-        "user_agent": "default"
+        "user_agent": "default",
+	"send_delay": "2"
     },
     "poll": {
         "interval": "800"
@@ -90,6 +92,7 @@
             "enable": "true"
         },
         "mark_unread_delay": "0.5",
+	"default_save_directory": "~",
         "mathjax": {
             "enable": "false",
             "uri_prefix": "https:\/\/cdn.mathjax.org\/mathjax\/latest\/",
