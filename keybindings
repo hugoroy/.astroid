@@ -1,21 +1,32 @@
-
-
+#---------------
 # Main Window
+#---------------
 
-## New notmuch search query
+# Make a new notmuch search query
 main_window.search=/ 
 
-# Thread index
+#-------------------
+# General behaviour
+#-------------------
 
-## Add or remove tags to thread
+# Add or remove tags to thread
 #thread_index.label=+ 
-#thread_index.label=Minus
+thread_index.label=Minus
+#thread_view.tag_message=+ 
+thread_view.tag_message=Minus
 
-## Tag as spam
+# Reply to maling list
+thread_index.reply_mailinglist=L
+thread_view.reply_mailinglist=L
+
+#---------------
+# Thread index
+#---------------
+
+# Tag as spam
 thread_index.spam=X
 
 # Thread scripts
-
 ## Toggle waiting tag
 thread_index.run(/home/hugo/.config/astroid/hooks/toggle waiting %1)=w
 
@@ -25,17 +36,15 @@ thread_index.run(/home/hugo/.config/astroid/hooks/toggle "unread -inbox" %1)=A
 ## Remember thread with org-mode capture
 #### TODO: http://git.upsilon.cc/?p=utils/org-mutt.git;a=blob_plain;f=remember-mail;hb=HEAD
 
+#-------------
 # Thread view
+#-------------
 
 ## Navigate in thread more like mutt
 thread_view.next_message=j
 thread_view.previous_message=k
 thread_view.down=n
 thread_view.up=p
-
-## Add or remove tags to message
-#thread_view.tag_message=+ 
-#thread_view.tag_message=Minus
 
 ## Forward inline
 thread_view.forward_inline=M-f
