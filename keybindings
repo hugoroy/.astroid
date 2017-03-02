@@ -19,6 +19,10 @@ thread_view.tag_message=Minus
 thread_index.reply_mailinglist=L
 thread_view.reply_mailinglist=L
 
+# Toggle waiting tag
+thread_index.run(/home/hugo/.config/astroid/hooks/toggle waiting %1)=w
+#thread_view.run(/home/hugo/.config/astroid/hooks/togglemessage waiting %1)=w
+
 #---------------
 # Thread index
 #---------------
@@ -27,8 +31,6 @@ thread_view.reply_mailinglist=L
 thread_index.spam=X
 
 # Thread scripts
-## Toggle waiting tag
-thread_index.run(/home/hugo/.config/astroid/hooks/toggle waiting %1)=w
 
 ## Archive without reading (but mark as read)
 thread_index.run(/home/hugo/.config/astroid/hooks/toggle "unread -inbox" %1)=A
