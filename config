@@ -73,7 +73,7 @@
         "send_delay": "2"
     },
     "poll": {
-        "interval": "800"
+        "interval": "100"
     },
     "attachment": {
         "external_open_cmd": "xdg-open"
@@ -81,7 +81,6 @@
     "thread_view": {
         "open_html_part_external": "true",
         "open_external_link": "xdg-open",
-        "default_save_directory": "~",
         "indent_messages": "false",
         "code_prettify": {
             "enable": "false",
@@ -93,6 +92,7 @@
         "gravatar": {
             "enable": "true"
         },
+        "default_save_directory": "~",
         "mark_unread_delay": "0.5",
         "mathjax": {
             "enable": "false",
