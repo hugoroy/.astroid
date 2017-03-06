@@ -2,6 +2,9 @@
 
 # poll script for astroid
 
+# Exit as soon as one of the commands fail.
+set -e
+
 #mbsync -a || exit $? 
 offlineimap -o -a ampoliros || exit $? 
 
