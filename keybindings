@@ -21,7 +21,7 @@ thread_view.reply_mailinglist=L
 
 # Toggle waiting tag
 thread_index.run(/home/hugo/.config/astroid/hooks/toggle waiting %1)=w
-thread_view.run(/home/hugo/.config/astroid/hooks/toggle waiting %1)=w
+thread_view.run(/home/hugo/.config/astroid/hooks/togglemail waiting %1)=w
 
 #---------------
 # Thread index
