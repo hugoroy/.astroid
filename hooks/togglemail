@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 #
-# get a tag as first argument and thread id as second argument
+# get a tag as first argument and message id as second argument
 #
 
 # check if we have tag
