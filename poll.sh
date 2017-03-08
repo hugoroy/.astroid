@@ -6,7 +6,7 @@
 set -e
 
 #mbsync -a || exit $? 
-offlineimap -o -a ampoliros || exit $? 
+offlineimap -o -q -a ampoliros || exit $? 
 
 notmuch new 
 
