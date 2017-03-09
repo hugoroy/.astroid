@@ -5,10 +5,45 @@
 # Exit as soon as one of the commands fail.
 set -e
 
+
+#######################
+# Fetch mail with IMAP
+#######################
+
 #mbsync -a || exit $? 
-offlineimap -o -q -a ampoliros || exit $? 
+#offlineimap -o -q -a ampoliros || exit $? 
+
+## do a full offlineimap sync once every two hours, otherwise only quicksync
+lastfull_f=~/.cache/astroid/offlineimap-last-full # storing state
+if [ -f $lastfull_f ]; then
+  lastfull=$(cat $lastfull_f)
+else
+  lastfull=0
+fi
+
+delta=$((2 * 60 * 60)) # seconds between full sync
+now=$(date +%s)
+diff=$(($now - $lastfull))
+
+if [ $diff -gt $delta ]; then
+  echo "full offlineimap sync.."
+  offlineimap || exit 1
+  echo -n $now > $lastfull_f
+else
+  echo "quick offlineimap sync.."
+  offlineimap -q || exit 1
+fi
+
+
+######################
+# Index new mail
+######################
 
 notmuch new 
+
+######################
+# Tag new mail
+######################
 
 # afew --move-mails --all --verbose
 afew --tag --new --verbose
@@ -43,5 +78,11 @@ notmuch tag +deleted -inbox -- tag:new AND \(folder:Trash OR folder:ampoliros/Tr
 
 # finally, untag all "new" messages
 notmuch tag -new -- tag:new
+
+
+########################
+# Move mail around
+########################
+
 
 afew --move-mails --all --verbose
