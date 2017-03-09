@@ -27,11 +27,11 @@ diff=$(($now - $lastfull))
 
 if [ $diff -gt $delta ]; then
   echo "full offlineimap sync.."
-  offlineimap || exit 1
+  offlineimap -o || exit 1
   echo -n $now > $lastfull_f
 else
   echo "quick offlineimap sync.."
-  offlineimap -q || exit 1
+  offlineimap -o -q || exit 1
 fi
 
 
