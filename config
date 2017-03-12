@@ -8,7 +8,7 @@
             "dryrun_sending": "false"
         },
         "hints": {
-            "level": "1"
+            "level": "-1"
         },
         "notmuch": {
             "db": "~\/Mail",
