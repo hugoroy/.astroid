@@ -59,7 +59,7 @@
     },
     "mail": {
         "reply": {
-            "quote_line": "↪ %1 \/ %2:",
+            "quote_line": "↪ %1 \/ %2:",
             "mailinglist_reply_to_sender": "true"
         },
         "forward": {
