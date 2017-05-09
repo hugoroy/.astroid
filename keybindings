@@ -29,6 +29,7 @@ thread_view.run(/home/hugo/.config/astroid/hooks/togglemail waiting %2)=w
 
 # Tag as spam
 thread_index.spam=X
+thread_view.run(/home/hugo/.config/astroid/hooks/togglemail spam %2)=X
 
 # Thread scripts
 
