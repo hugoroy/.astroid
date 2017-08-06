@@ -10,8 +10,8 @@ main_window.search=/
 #-------------------
 
 # Add or remove tags to thread
-thread_index.label=+ 
-thread_index.label=minus
+thread_index.tag=+ 
+thread_index.tag=minus
 thread_view.tag_message=+ 
 thread_view.tag_message=minus
 
