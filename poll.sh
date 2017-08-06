@@ -1,6 +1,14 @@
 #! /bin/bash
 
-# poll script for astroid
+# This is a poll script for the Astroid mail user agent. To get
+# introduced about polling in Astroid, read
+# <https://github.com/astroidmail/astroid/wiki/Polling>.
+
+# This poll script is intended to run automatically every few minutes
+# in order to fetch new mail via IMAP (using Offlineimap), to put new
+# mail in the index database and to tag it accordingly (using notmuch)
+# and to move mail around in accordance with defined tags (using
+# afew).
 
 # Exit as soon as one of the commands fail.
 set -e
