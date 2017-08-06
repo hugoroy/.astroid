@@ -6,9 +6,9 @@
 
 # This poll script is intended to run automatically every few minutes
 # in order to fetch new mail via IMAP (using Offlineimap), to put new
-# mail in the index database and to tag it accordingly (using notmuch)
-# and to move mail around in accordance with defined tags (using
-# afew).
+# mail in the index database and to tag it accordingly (using notmuch
+# and afew) and to move mail around in accordance with defined tags
+# (using afew).
 
 # Exit as soon as one of the commands fail.
 set -e
@@ -18,8 +18,16 @@ set -e
 # Fetch mail with IMAP
 #######################
 
+# Simple way
+
 #mbsync -a || exit $? 
 #offlineimap -o -q -a ampoliros || exit $? 
+
+# Complicated way
+
+# FIXME this needs work to be more reliable and fail-proof. Otherwise,
+# just remember that offlineimap may fail, delete the lock file and
+# start it again.
 
 ## do a full offlineimap sync once every two hours, otherwise only quicksync
 lastfull_f=~/.cache/astroid/offlineimap-last-full # storing state
@@ -67,13 +75,19 @@ notmuch tag --batch <<EOF
 
 EOF
 
-# Drafts
+# Tag drafts as such
 notmuch tag +draft -unread -- tag:new AND \(folder:ampoliros/Drafts OR folder:ampoliros/Brouillons OR folder:fsfe/INBOX.Brouillons\)
 notmuch tag -draft -- tag:new AND tag:draft NOT \(folder:ampoliros/Drafts OR folder:ampoliros/Brouillons OR folder:fsfe/INBOX.Brouillons\)
 
-# tag archived messages
+# Tag mail in archive folders
 notmuch tag +archives/2017 -inbox -unread -- tag:new AND folder:archives/2017
 notmuch tag +archives/2017 -inbox -unread -- tag:new AND folder:ampoliros/Archive.2017
+
+# Mute incoming mail in response to already muted threads
+THREAD_TAGS="muted"
+for tag in "$THREAD_TAGS"; do
+	notmuch tag +$tag $(notmuch search --output=threads tag:$tag)
+done
 
 # tag all spam accordingly
 notmuch tag +spam -inbox -- tag:new AND \(folder:Spam OR folder:ampoliros/Spam\)
