@@ -84,10 +84,10 @@ notmuch tag +archives/2017 -inbox -unread -- tag:new AND folder:archives/2017
 notmuch tag +archives/2017 -inbox -unread -- tag:new AND folder:ampoliros/Archive.2017
 
 # Mute incoming mail in response to already muted threads
-THREAD_TAGS="muted"
-for tag in "$THREAD_TAGS"; do
-	notmuch tag +$tag $(notmuch search --output=threads tag:$tag AND tag:new)
-done
+# THREAD_TAGS="muted"
+# for tag in "$THREAD_TAGS"; do
+# 	notmuch tag +$tag $(notmuch search --output=threads tag:$tag AND tag:new)
+# done
 
 # tag all spam accordingly
 notmuch tag +spam -inbox -- tag:new AND \(folder:Spam OR folder:ampoliros/Spam\)
