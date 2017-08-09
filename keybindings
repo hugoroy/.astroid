@@ -4,6 +4,7 @@
 
 # Make a new notmuch search query
 main_window.search=/ 
+main_window.undo=C-z
 
 #-------------------
 # General behaviour
