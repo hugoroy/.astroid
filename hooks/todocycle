@@ -1,0 +1,25 @@
+#! /usr/bin/bash
+#
+# cycle todo tags
+#
+
+# check if we have any todo tag
+if [[ $(notmuch search thread:$2 AND NOT \(tag:todo OR tag:started OR tag:done\)) ]]; then
+  echo "add to the todo list"
+  notmuch tag +todo thread:$2
+else
+    if [[ $(notmuch search thread:$2 and tag:todo) ]]; then
+      echo "started this"
+      notmuch tag -todo +started thread:$2
+    else
+        if [[ $(notmuch search thread:$2 and tag:started) ]]; then
+          echo "did this"
+          notmuch tag -started +done thread:$2
+	else
+	    if [[ $(notmuch search thread:$2 and tag:done) ]]; then
+	      echo "undo"
+	      notmuch tag -done thread:$2
+	    fi
+        fi
+    fi
+fi
